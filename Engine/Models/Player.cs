@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
+    /// <summary>
+    /// This class handles the player information.
+    /// </summary>
     public class Player
     {
         public string Name { get; set; }
