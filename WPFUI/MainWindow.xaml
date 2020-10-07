@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI"
         mc:Ignorable="d"
-        FontSize="11pt"
+        FontSize="10pt"
         Title="Eric's Awesome Game" Height="768" Width="1024">
 
     <Window.Resources>
@@ -91,8 +91,26 @@
             </Border>
                     
         </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0" Background="BurlyWood"> <!-- Inventory/Quests Data -->
+            <TabControl>
+                <TabItem Header="Inventory">
+                    <DataGrid ItemsSource="{Binding CurrentPlayer.Inventory}"
+                              AutoGenerateColumns="False"
+                              HeadersVisibility="Column">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Description"
+                                                Binding="{Binding Name}"
+                                                Width="*"/>
+                            <DataGridTextColumn Header="Price"
+                                                Binding="{Binding Price}"
+                                                Width="auto"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>                                
+            </TabControl>
+        </Grid>
         
-        <Label Grid.Row="2" Grid.Column="0" Content="Inventory/Quests" Background="BurlyWood"/>
         
         <Grid Grid.Row="2" Grid.Column="1" Background="Lavender"> <!-- Combat/Movement Controls -->
             <Grid.RowDefinitions>

@@ -1,6 +1,5 @@
-﻿using Engine.Models;
-using Engine.Factories;
-using System.ComponentModel;
+﻿using Engine.Factories;
+using Engine.Models;
 
 namespace Engine.ViewModels
 {
@@ -94,8 +93,7 @@ namespace Engine.ViewModels
             if (HasLocationToSouth)
             {
                 CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
-            }
-            
+            }            
         }
     }
 }
