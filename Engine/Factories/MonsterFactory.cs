@@ -31,8 +31,8 @@ namespace Engine.Factories
                     Monster giantSpider =
                         new Monster("Giant Spider", "GiantSpider.png", 10, 10, 1, 4, 10, 3);
 
-                    AddLootItem(giantSpider, 9003, 25);
-                    AddLootItem(giantSpider, 9004, 75);
+                    AddLootItem(giantSpider, 9005, 25);
+                    AddLootItem(giantSpider, 9006, 75);
 
                     return giantSpider;
 
@@ -45,7 +45,7 @@ namespace Engine.Factories
         {
             if (RandomNumberGenerator.NumberBetween(1, 100) <= percentage)
             {
-                monster.Inventory.Add(new ItemQuantity(itemID, 1));
+                monster.AddItemToInventory(ItemFactory.CreateGameItem(itemID));
             }
         }
     }
